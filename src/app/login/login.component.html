@@ -16,6 +16,7 @@
             <div class="text-danger" *ngIf="hasError('password','minlength')">Contraseña inválida, tiene menos de 8 carácteres.</div>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
+        <a routerLink="/register" class="btn btn-link">No tens compte? Registra't</a>
         <p>{{Prova | uppercase}}</p>
         <p>    {{date | date:'dd/MM/yyyy'}}</p>
         <p>    {{date | date}}</p>

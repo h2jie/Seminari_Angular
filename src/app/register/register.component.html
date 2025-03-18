@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="formularioRegistre" (ngSubmit)="registrar()">
+    <h1>Registre d'usuari</h1>
+    
+    <div>
+      <label for="name">Nom:</label>
+      <input type="text" id="name" formControlName="name">
+      <div *ngIf="teError('name', 'required')">Nom requerit.</div>
+    </div>
+    
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="teError('email', 'required')">Email requerit.</div>
+      <div *ngIf="teError('email', 'email')">Email invàlid.</div>
+    </div>
+    
+    <div>
+      <label for="age">Edat:</label>
+      <input type="number" id="age" formControlName="age">
+      <div *ngIf="teError('age', 'required')">Edat requerida.</div>
+      <div *ngIf="teError('age', 'min')">Edat > 0.</div>
+    </div>
+    
+    <button type="submit">Registrar</button>
+    <a routerLink="/login">Ja tens compte? Inicia sessió</a>
+  </form>
+</div>
